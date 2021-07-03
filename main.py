@@ -9,6 +9,7 @@ from reportlab.lib.pagesizes import letter
 
 
 key=input() #-> keyword
+key=wikipedia.suggest(key) #-> if key doesn't exist or wikipedia can't search for it, it automatically goes for similar keyword
 cntnt=wikipedia.page(key) #-> wikipedia page
 
 ttle=cntnt.title #-> title
@@ -45,8 +46,3 @@ doc.build(
     story,
 )
 
-
-
-# in case keyword doesn't work, we can run below line to find correct keyword
-
-# print(wikipedia.suggest("Harry Potter"))
